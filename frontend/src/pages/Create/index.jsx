@@ -27,12 +27,12 @@ export default function AddLocation() {
 
     const action = state ?
         {
-            url: "http://localhost:3001/post/update/" + state?._id,
+            url: "https://api-hackathon-blog.onrender.com/post/update/" + state?._id,
             method: "PUT",
         }
         :
         {
-            url: "http://localhost:3001/post/create",
+            url: "https://api-hackathon-blog.onrender.com/post/create",
             method: "POST",
         }
 

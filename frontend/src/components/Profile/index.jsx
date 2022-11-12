@@ -21,7 +21,7 @@ export default function Profile({ open, setOpen, setUser }) {
     btnText: "Update",
     send: e => {
       Alert({type: "info", message: "Updating profile...", timer: 10000})
-      fetch("http://localhost:3001/auth/user", {
+      fetch("https://api-hackathon-blog.onrender.com/auth/user", {
         method: "PUT",
         body: JSON.stringify(payload),
         headers: {

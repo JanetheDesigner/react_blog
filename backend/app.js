@@ -40,5 +40,5 @@ mongoose.connect(process.env.MONGODB_URL)
 app.use("/auth", userRouter);
 app.use("/post", postRouter)
 
-const port = 3001
+const port = process.env.PORT || 3001
 app.listen(port, () => console.log("App listening on port", port))

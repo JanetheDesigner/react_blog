@@ -27,7 +27,7 @@ export default function Signup() {
         Alert({ type: "info", message: "Registering...", timer: 10000 })
         setState(state => ({ ...state, loading: true, isError: false }))
         try {
-            const res = await fetch("http://localhost:3001/auth/signup", { method: "post", body: JSON.stringify(payload), headers: { "content-type": "application/json" } })
+            const res = await fetch("https://api-hackathon-blog.onrender.com/auth/signup", { method: "post", body: JSON.stringify(payload), headers: { "content-type": "application/json" } })
             const jsonResponse = await res.json();
 
 

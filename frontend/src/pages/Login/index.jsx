@@ -27,7 +27,7 @@ export default function Login() {
 
     setState(state => ({ ...state, message: "", loading: true, isError: false }))
     try {
-      const res = await fetch("http://localhost:3001/auth/login", { method: "post", body: JSON.stringify(payload), headers: { "content-type": "application/json" } })
+      const res = await fetch("https://api-hackathon-blog.onrender.com/auth/login", { method: "post", body: JSON.stringify(payload), headers: { "content-type": "application/json" } })
       const jsonResponse = await res.json();
 
       setState(state => ({ ...state, loading: false, isError: !jsonResponse.success }))

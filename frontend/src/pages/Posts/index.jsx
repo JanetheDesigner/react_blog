@@ -18,14 +18,14 @@ export default function Posts() {
     const [postId, setPostId] = useState('')
 
     function getPosts (){
-        fetch("http://localhost:3001/post/all").then(res => res.json())
+        fetch("https://api-hackathon-blog.onrender.com/post/all").then(res => res.json())
             .then(({ success, data }) => {
                 if (success) setPosts(data)
             }).catch(console.error)
     }
 
     useEffect(() => {
-        fetch("http://localhost:3001/auth/user", { headers: { authorization: localStorage.getItem("token") } }).then(res => res.json())
+        fetch("https://api-hackathon-blog.onrender.com/auth/user", { headers: { authorization: localStorage.getItem("token") } }).then(res => res.json())
             .then(({ success, data }) => {
                 setLoading(false)
                 if (success) {
@@ -59,7 +59,7 @@ export default function Posts() {
 
     function confirmDelete() {
         Alert({ type: "info", message: "Deleting post...", timer: 10000 })
-        fetch("http://localhost:3001/post/delete/" + postId,{
+        fetch("https://api-hackathon-blog.onrender.com/post/delete/" + postId,{
             method: "DELETE",
             headers: {
                 authorization: localStorage.getItem("token")
